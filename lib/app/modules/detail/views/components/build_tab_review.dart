@@ -44,7 +44,9 @@ class BuildTabReviews extends GetView<DetailController> {
                           padding: EdgeInsets.zero,
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
-                          itemCount: 3,
+                          itemCount: controller.reviewMovie!.length > 3
+                              ? 3
+                              : controller.reviewMovie!.length,
                           itemBuilder: (context, index) => BuildReviewItem(
                             author: controller.reviewMovie![index].author,
                             content: controller.reviewMovie![index].content,
@@ -78,11 +80,11 @@ class BuildTabReviews extends GetView<DetailController> {
                       ],
                     )
                   : Center(
-                    child: Text(
+                      child: Text(
                         "Data review not found",
                         style: text12(white, regular),
                       ),
-                  ),
+                    ),
               const SizedBox(
                 height: 16,
               ),

@@ -13,7 +13,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: primaryBlue,
       appBar: AppBar(
-        backgroundColor: primaryBlue,
+        backgroundColor: secondaryBlue,
         title: Text(
           "MovieDB",
           style: text16(white, bold),
